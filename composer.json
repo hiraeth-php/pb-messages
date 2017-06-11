@@ -1,0 +1,26 @@
+{
+    "name": "hiraeth/pb-messages",
+    "description": "Plasticbrain Messages for the Hiraeth Nano-Framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":  "Matthew J. Sahagian",
+            "email": "msahagian@dotink.org",
+            "role":  "Lead Architect / Developer"
+        }
+    ],
+    "require": {
+        "plasticbrain/php-flash-messages": "^1.0"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "type": "opus-package",
+    "extra": {
+        "opus": {
+            "hiraeth/app": {
+                "plugin/config": ""
+            }
+        }
+    }
+}
