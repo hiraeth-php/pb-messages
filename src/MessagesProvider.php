@@ -3,8 +3,10 @@
 namespace Hiraeth\Messages;
 
 use Hiraeth;
-use Plasticbrain\FlashMessages;
 
+/**
+ *
+ */
 class MessagesProvider implements Hiraeth\Provider
 {
 	/**
@@ -33,7 +35,7 @@ class MessagesProvider implements Hiraeth\Provider
 	static public function getInterfaces()
 	{
 		return [
-			'Plasticbrain\FlashMessages\FlashMesssages'
+			'Plasticbrain\FlashMessages\FlashMessages'
 		];
 	}
 
@@ -58,10 +60,13 @@ class MessagesProvider implements Hiraeth\Provider
 		$classmap = array();
 
 		foreach ($this->config->get('pb-messages', 'classmap', $this->classmap) as $type => $classes) {
-			$classmap[$instance::$type] = $classes;
+			$classmap[constant(get_class($instance) . '::' . $type)] = $classes;
 		}
 
-		$this->setCssClassMap($classmap);
+		$instance->setMsgCssClass('messaging');
+		$instance->setCssClassMap($classmap);
+		$instance->setMsgBefore('<p>');
+		$instance->setMsgAfter('</p>');
 
 		return $instance;
 	}
