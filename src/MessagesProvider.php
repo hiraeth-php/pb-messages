@@ -13,10 +13,10 @@ class MessagesProvider implements Hiraeth\Provider
 	 *
 	 */
 	protected $classmap = [
-		'ERROR'   => 'messaging error',
-		'WARNING' => 'messaging warning',
-		'SUCCESS' => 'messaging success',
-		'INFO'    => 'messaging info',
+		'ERROR'   => 'error',
+		'WARNING' => 'warning',
+		'SUCCESS' => 'success',
+		'INFO'    => 'info',
 	];
 
 
