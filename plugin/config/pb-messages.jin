@@ -1,4 +1,10 @@
 ;
+; The primary CSS class to apply to all messages
+;
+
+class = messaging
+
+;
 ; CSS classmap provides the CSS classes used (values) for the type of message (keys)
 ;
 

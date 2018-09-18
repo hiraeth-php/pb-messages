@@ -63,7 +63,7 @@ class MessagesProvider implements Hiraeth\Provider
 			$classmap[constant(get_class($instance) . '::' . $type)] = $classes;
 		}
 
-		$instance->setMsgCssClass('messaging');
+		$instance->setMsgCssClass($this->config->get('pb-messages', 'class', 'messaging'));
 		$instance->setCssClassMap($classmap);
 		$instance->setMsgBefore('<p>');
 		$instance->setMsgAfter('</p>');
